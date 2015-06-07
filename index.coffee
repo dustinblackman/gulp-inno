@@ -4,7 +4,7 @@ path = require 'path'
 
 module.exports = (opts) ->
   return es.map (script, next) ->
-    compil = path.resolve('./node_modules/gulp-inno/inno/Compil32.exe')
+    compil = path.resolve(path.join(__dirname, 'inno/Compil32.exe'))
     script_path = path.resolve(script.path)
 
     if process.platform != 'win32'
