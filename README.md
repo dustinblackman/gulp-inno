@@ -12,7 +12,10 @@ var inno = require('gulp-inno');
 gulp.src('./installer_script.iss').pipe(inno());
 ```
 
+For OS X Users: If you get `Failed to start Cocoa app main loop`, you need to upgrade wine to the latest devel
+
+```brew install wine --devel```
+
 ### TODO:
 - Write proper Readme.
 - Clean unneeded inno files.
-- Use terminal version of Inno
