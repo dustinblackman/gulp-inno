@@ -2,6 +2,12 @@
 
 Compile a windows installer using Inno Setup Compiler and Gulp.
 
+### Install:
+
+```bash
+npm install --save-dev gulp-inno
+```
+
 ### Example:
 
 Pass your inno script in gulp src and pipe it to Inno.
