@@ -1,6 +1,6 @@
 {
   "name": "gulp-inno",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Compile Inno Setup scripts using Gulp",
   "main": "index.js",
   "scripts": {
