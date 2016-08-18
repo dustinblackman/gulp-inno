@@ -3,16 +3,19 @@ var spawn = require('child_process').spawn;
 var path = require('path');
 
 module.exports = function(opts) {
+  opts = opts || {};
+
   return es.map(function(script, next) {
     var compil = path.resolve(path.join(__dirname, 'inno/ISCC.exe'));
     var script_path = path.resolve(script.path);
 
-    var args, run;
+    var args = opts.args || [];
+    var run;
     if (process.platform !== 'win32') {
-      args = [compil, 'Z:' + script_path];
+      args = args.concat([compil, 'Z:' + script_path]);
       run = spawn('wine', args);
     } else {
-      args = [script_path];
+      args = args.concat([script_path]);
       run = spawn(compil, args);
     }
     run.stdout.on('data', function(data) {
