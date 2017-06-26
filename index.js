@@ -5,7 +5,7 @@ var path = require('path');
 module.exports = function(opts) {
   opts = opts || {};
   opts.args = opts.args || [];
-  opts.env = opts.env || {};
+  opts.env = Object.assign({}, process.env, opts.env || {});
 
   return es.map(function(script, next) {
     var compil = path.resolve(path.join(__dirname, 'inno/ISCC.exe'));
