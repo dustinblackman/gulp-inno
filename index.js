@@ -26,8 +26,13 @@ module.exports = function(opts) {
       console.log('stderr: ' + data);
     });
     run.on('close', function(code) {
-      console.log('child process exited with code ' + code);
-      return next(null);
+      var message = 'child process exited with code ' + code;
+      console.log(message);
+      if (code !== 0) {
+        return next(message);
+      } else {
+        return next(null);
+      }
     });
   });
 };
