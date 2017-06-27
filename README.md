@@ -17,7 +17,10 @@ var gulp = require('gulp');
 var inno = require('gulp-inno');
 gulp.src('./installer_script.iss')
   .pipe(inno({
-    args: ['arg1', 'args2', 'arg3']
+    args: ['arg1', 'args2', 'arg3'],
+    env: {
+        /* environment key-value pairs */
+    }
   }));
 ```
 
