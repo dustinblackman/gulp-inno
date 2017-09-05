@@ -20,7 +20,8 @@ gulp.src('./installer_script.iss')
     args: ['arg1', 'args2', 'arg3'],
     env: {
         /* environment key-value pairs */
-    }
+    },
+    verbose: true
   }));
 ```
 
